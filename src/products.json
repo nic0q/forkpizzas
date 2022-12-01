@@ -1,0 +1,20 @@
+{
+  "Pizzas": [{"id": 1, "name": "Americana", "ingredients": ["Jamón", "Carne", "Salchicha", "Pepperoni"]},
+  {"id": 2, "name": "BBQ Chicken", "ingredients": ["Salsa BBQ", "Pollo", "Cebolla"]},
+  {"id": 3, "name": "Campesina", "ingredients": ["Champiñon", "Pollo", "Pimiento"]},
+  {"id": 4, "name": "Hawaiana", "ingredients": ["Jamón", "Pollo", "Piña"]},
+  {"id": 5, "name": "Mechada BBQ", "ingredients": ["Carne Mechada", "Tomate", "Cebolla"]},
+  {"id": 6, "name": "Vegan Queen", "ingredients": ["Champiñon", "Pimiento", "Cebolla", "Choclo", "Tomate"]}],
+
+
+  "Productos": {
+    "Carnes": ["Carne", "Carne Mechada", "Pollo", "Salchicha", "Pepperoni"],"Vegetales": ["Champiñon", "Pimiento", "Cebolla", "Choclo", "Tomate"],"Queso": ["Gouda", "Mozzarella"]
+  },
+
+  "Complementos": {
+    "Bebidas": [{"id": 1, "name": "Coca Cola"}, {"id": 2, "name": "Fanta"}],
+    "Jugos": [{"id": 1, "name": "Watts Durazno"}, {"id": 2, "name": "Watts Piña"}],
+    "Agua": [{"id": 1, "name": "Cachantun con Gas"}, {"id": 2, "name": "Cachantun sin gas"}],
+    "Salsa": [{"id": 1, "name": "Salsa BBQ"}, {"id": 2, "name": "Salsa de Tomate"}, {"id": 3, "name": "Salsa Picante"}, {"id": 4, "name": "Salsa Garlic"}]
+  }
+}
