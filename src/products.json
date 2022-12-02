@@ -1,17 +1,22 @@
 {
-  "Pizzas": [{"id": 1, "name": "Pizza Americana", "ingredients": ["Jamón", "Carne", "Salchicha", "Pepperoni"]},
-  {"id": 2, "name": "Pizza BBQ Chicken", "ingredients": ["Salsa BBQ", "Pollo", "Cebolla"]},
-  {"id": 3, "name": "Pizza Campesina", "ingredients": ["Champiñon", "Pollo", "Pimiento"]},
-  {"id": 4, "name": "Pizza Hawaiana", "ingredients": ["Jamón", "Pollo", "Piña"]},
-  {"id": 5, "name": "Pizza Mechada BBQ", "ingredients": ["Carne Mechada", "Tomate", "Cebolla"]},
-  {"id": 6, "name": "Pizza Vegan Queen", "ingredients": ["Champiñon", "Pimiento", "Cebolla", "Choclo", "Tomate"]}],
-  "Complementos": {
-    "Bebidas": [{"id": 7, "name": "Coca Cola"}, {"id": 2, "name": "Fanta"}],
-    "Jugos": [{"id": 8, "name": "Watts Durazno"}, {"id": 2, "name": "Watts Piña"}],
-    "Agua": [{"id": 9, "name": "Cachantun con Gas"}, {"id": 2, "name": "Cachantun sin gas"}],
-    "Salsa": [{"id": 10, "name": "Salsa BBQ"}, {"id": 2, "name": "Salsa de Tomate"}, {"id": 3, "name": "Salsa Picante"}, {"id": 4, "name": "Salsa Garlic"}]
-  },
-  "Productos": {
+  "Pizzas": [{"id": 1, "name": "Pizza Americana", "ingredients": ["Jamón", "Carne", "Salchicha", "Pepperoni"], "img": "https://media.gettyimages.com/id/833378372/photo/generic-picture-of-a-pizza-from-pizza-hut.jpg?s=612x612&w=gi&k=20&c=3eWec5D5YN_YS8KWm-ihoVJBGSk5dcvE8brV7U_DtQI="}, 
+  {"id": 2, "name": "Pizza BBQ Chicken", "ingredients": ["Salsa BBQ", "Pollo", "Cebolla"], "img": "https://media.gettyimages.com/id/833378372/photo/generic-picture-of-a-pizza-from-pizza-hut.jpg?s=612x612&w=gi&k=20&c=3eWec5D5YN_YS8KWm-ihoVJBGSk5dcvE8brV7U_DtQI="},
+  {"id": 3, "name": "Pizza Campesina", "ingredients": ["Champiñon", "Pollo", "Pimiento"], "img": "https://media.gettyimages.com/id/833378372/photo/generic-picture-of-a-pizza-from-pizza-hut.jpg?s=612x612&w=gi&k=20&c=3eWec5D5YN_YS8KWm-ihoVJBGSk5dcvE8brV7U_DtQI="},
+  {"id": 4, "name": "Pizza Hawaiana", "ingredients": ["Jamón", "Pollo", "Piña"], "img": "https://media.gettyimages.com/id/833378372/photo/generic-picture-of-a-pizza-from-pizza-hut.jpg?s=612x612&w=gi&k=20&c=3eWec5D5YN_YS8KWm-ihoVJBGSk5dcvE8brV7U_DtQI="},
+  {"id": 5, "name": "Pizza Mechada BBQ", "ingredients": ["Carne Mechada", "Tomate", "Cebolla"], "img": "https://media.gettyimages.com/id/833378372/photo/generic-picture-of-a-pizza-from-pizza-hut.jpg?s=612x612&w=gi&k=20&c=3eWec5D5YN_YS8KWm-ihoVJBGSk5dcvE8brV7U_DtQI="},
+  {"id": 6, "name": "Pizza Vegan Queen", "ingredients": ["Champiñon", "Pimiento", "Cebolla", "Choclo", "Tomate"], "img": "https://media.gettyimages.com/id/833378372/photo/generic-picture-of-a-pizza-from-pizza-hut.jpg?s=612x612&w=gi&k=20&c=3eWec5D5YN_YS8KWm-ihoVJBGSk5dcvE8brV7U_DtQI="}],
+  "Complements":[
+    {"id": 13, "name": "Salsa BBQ", "img": "https://pbs.twimg.com/media/B0vZM5VCYAImXGE.jpg"},
+    {"id": 14, "name": "Salsa de Tomate", "img": "https://pbs.twimg.com/media/B0vZM1XCMAA2iIH?format=jpg&name=900x900"},
+    {"id": 15, "name": "Salsa Picante", "img": "https://pbs.twimg.com/media/B0vZM38CEAA-Hzg.jpg"},
+    {"id": 16, "name": "Salsa Garlic", "img": "https://pbs.twimg.com/media/B0vZM2gCQAAVyPH.jpg"}],
+  "Bebidas": [{"id": 7, "name": "Coca Cola", "img": "https://brindo.cl/3-large_default/1x-coca-cola-lata-350cc.jpg"},
+  {"id": 8, "name": "Fanta", "img": "https://brindo.cl/15-large_default/1x-fanta-lata-350cc.jpg"},
+  {"id": 9, "name": "Watts Durazno", "img": "https://brindo.cl/53-large_default/6x-nectar-watts-naranja-botella-1500cc.jpg"},
+  {"id": 10, "name": "Watts Piña", "img": "https://brindo.cl/53-large_default/6x-nectar-watts-naranja-botella-1500cc.jpg"},
+  {"id": 11, "name": "Cachantun con Gas", "img": "https://brindo.cl/756-medium_default/6x-cachantun-con-gas-botella-1600cc.jpg"},
+  {"id": 12, "name": "Cachantun sin gas", "img": "https://brindo.cl/57-medium_default/1x-cachantun-mas-sin-gas-sabor-manzana-botella-1600cc.jpg"}],
+  "Products": {
     "Carnes": ["Carne", "Carne Mechada", "Pollo", "Salchicha", "Pepperoni"],"Vegetales": ["Champiñon", "Pimiento", "Cebolla", "Choclo", "Tomate"],"Queso": ["Gouda", "Mozzarella"]
   }
 }

@@ -3,8 +3,10 @@ import { useState } from 'react';
 import remove_from_cart from '../utilities/remove_from_cart';
 import remove_cart from '../utilities/remove_cart';
 
-export default function Cart() {
-  const [cart, setCart] = useState(localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []);
+export default function Cart({carte = []}) {
+  console.log(carte)
+  const [cart, setCart] = useState(carte);
+  
   const empty_cart = () => {
     setCart(remove_cart());
   }
@@ -17,7 +19,7 @@ export default function Cart() {
   return (
     <div>
       {cart.length !== 0 ? cart.items.map((item) =>
-        <div key={item.id}>
+        <div key={item.id}> 
           <label className="font-bold">Item</label>
           <h6 className="text-xl">{item.name}</h6>
           <h6 className="text-xl">{item.quantity}</h6>

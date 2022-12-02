@@ -20,4 +20,5 @@ export default function add_to_cart(object) {
     add_item(cart, object)
     localStorage.setItem("cart", JSON.stringify(cart));
   }
+  return JSON.parse(localStorage.getItem("cart")).items;
 }
