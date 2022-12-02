@@ -1,13 +1,13 @@
 import { BsFillCartPlusFill } from 'react-icons/bs';
 
-export default function FoodCard({name, ingredients = [], add, img}) {
+export default function FoodCard({name, ingredients = [], add, img, size}) {
   return (
-    <div className="flex-row rounded-lg border-2 text-center m-4 w-48">
-      <img alt="pizza" src={img}></img>
-      <h2 className="text-2xl font-bold" color="black">{name}</h2>
-      {ingredients.map((ingredient) => <span key = {ingredient} className="text-xs">{ingredient + " "}</span>)}
+    <div className={"flex-row rounded-lg border-2 text-center m-2 pb-2 bg-gray-300 "+size}>
+      <img className={size} alt="pizza" src={img}></img>
+      <h2 className="text-sm font-bold pt-2" color="black">{name}</h2>
+      {ingredients.map((ingredient) => <span key = {ingredient} className="text-xs font-sans">{ingredient + " "}</span>)}
       <div>
-      <button onClick={add} className="bg-[#42bb42] hover:bg-[#5ac95a] text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+      <button onClick={add} className="bg-[#42bb42] hover:bg-[#5ac95a] text-gray-800 font-semibold py-2 mt-2 px-4 border border-gray-400 rounded shadow">
         <BsFillCartPlusFill className="text-white"/>
       </button></div>
     </div>
