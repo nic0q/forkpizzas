@@ -4,6 +4,9 @@ import FoodCard from "./FoodCard";
 import add_to_cart from '../utilities/add_to_cart';
 import { useNavigate  } from "react-router-dom";
 import Cart from "./Cart";
+import remove_cart from '../utilities/remove_cart';
+import remove_from_cart from '../utilities/remove_from_cart';
+import { BsFillCartPlusFill } from 'react-icons/bs';
 
 export default function Menu() {
   const navigate = useNavigate()
@@ -11,15 +14,18 @@ export default function Menu() {
   const add = (name, id, ingredients = []) => {
     setCart(add_to_cart({name, ingredients, id}));
   }
-
-  const go_to_cart = () => {
-    navigate("/cart");
+  const empty_cart = () => {
+    setCart(remove_cart());
+  }
+  const remove_item = (id) => {
+    setCart(remove_from_cart(id))    
   }
 
   return (
     <div className="flex">
-      <button className="w-64">Carrito</button>
-      <button onClick={go_to_cart}>Ir al carrito ;</button>
+      <button onClick={()=>navigate("/checkout")} className="bg-[#42bb42] hover:bg-[#5ac95a] text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        <BsFillCartPlusFill className="text-white"/>
+      </button>
       <div className="flex flex-wrap">
         {products.Pizzas.map((pizza) => <FoodCard key={pizza.id} id = {pizza.id} name={pizza.name} ingredients={pizza.ingredients} img = {pizza.img} add = {()=>add(pizza.name, pizza.id, pizza.ingredients)}/>)}
       </div>
@@ -29,7 +35,7 @@ export default function Menu() {
       <div className="flex flex-wrap">
         {products.Complements.map((item) => <FoodCard key={item.id} id = {item.id} name={item.name} img={item.img} add = {()=>add(item.name, item.id)}/>)}
       </div>
-      <Cart carte = {cart}></Cart>
+      <Cart carte = {cart} empty_cart = {empty_cart} remove_item = {remove_item}></Cart>
     </div>
   )
 }
