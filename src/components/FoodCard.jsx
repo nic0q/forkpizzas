@@ -2,7 +2,7 @@ import { BsFillCartPlusFill } from 'react-icons/bs';
 
 export default function FoodCard({name, ingredients = [], add, img}) {
   return (
-    <div className="flex-row rounded-lg border-2 w-72 text-center">
+    <div className="flex-row rounded-lg border-2 text-center m-4 w-48">
       <img alt="pizza" src={img}></img>
       <h2 className="text-2xl font-bold" color="black">{name}</h2>
       {ingredients.map((ingredient) => <span key = {ingredient} className="text-xs">{ingredient + " "}</span>)}

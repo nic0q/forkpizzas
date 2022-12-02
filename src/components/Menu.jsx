@@ -22,20 +22,24 @@ export default function Menu() {
   }
 
   return (
-    <div className="flex">
-      <button onClick={()=>navigate("/checkout")} className="bg-[#42bb42] hover:bg-[#5ac95a] text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
-        <BsFillCartPlusFill className="text-white"/>
-      </button>
-      <div className="flex flex-wrap">
-        {products.Pizzas.map((pizza) => <FoodCard key={pizza.id} id = {pizza.id} name={pizza.name} ingredients={pizza.ingredients} img = {pizza.img} add = {()=>add(pizza.name, pizza.id, pizza.ingredients)}/>)}
+    <div className="flex bg-black text-white w-full justify-center">
+      <div className="flex flex-col">
+        <div className="flex flex-row justify-center">
+          {products.Pizzas.map((pizza) => <FoodCard key={pizza.id} id = {pizza.id} name={pizza.name} ingredients={pizza.ingredients} img = {pizza.img} add = {()=>add(pizza.name, pizza.id, pizza.ingredients)}/>)}
+        </div>
+        <div className="flex flex-row justify-center">
+          {products.Bebidas.map((item) => <FoodCard key={item.id} id = {item.id} name={item.name} img={item.img} add = {()=>add(item.name, item.id)}/>)}
+        </div>
+        <div className="flex flex-row justify-center">
+          {products.Complements.map((item) => <FoodCard key={item.id} id = {item.id} name={item.name} img={item.img} add = {()=>add(item.name, item.id)}/>)}
+        </div>
       </div>
-      <div className="flex flex-wrap">
-        {products.Bebidas.map((item) => <FoodCard key={item.id} id = {item.id} name={item.name} img={item.img} add = {()=>add(item.name, item.id)}/>)}
+      <div>
+        <Cart carte = {cart} empty_cart = {empty_cart} remove_item = {remove_item}></Cart>
+        <button onClick={()=>navigate("/checkout")} className="bg-[#42bb42] hover:bg-[#5ac95a] text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+          <BsFillCartPlusFill className="text-gray-800"/>
+        </button>
       </div>
-      <div className="flex flex-wrap">
-        {products.Complements.map((item) => <FoodCard key={item.id} id = {item.id} name={item.name} img={item.img} add = {()=>add(item.name, item.id)}/>)}
-      </div>
-      <Cart carte = {cart} empty_cart = {empty_cart} remove_item = {remove_item}></Cart>
     </div>
   )
 }
