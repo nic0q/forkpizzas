@@ -15,7 +15,7 @@
   {"id": 9, "name": "Watts Durazno","price": 1500, "img": "https://brindo.cl/53-large_default/6x-nectar-watts-naranja-botella-1500cc.jpg"},
   {"id": 10, "name": "Watts Piña","price": 1500, "img": "https://brindo.cl/53-large_default/6x-nectar-watts-naranja-botella-1500cc.jpg"},
   {"id": 11, "name": "Cachantun con Gas","price": 1000, "img": "https://brindo.cl/756-medium_default/6x-cachantun-con-gas-botella-1600cc.jpg"},
-  {"id": 12, "name": "Cachantun sin gas","price": 1000, "img": "https://brindo.cl/57-medium_default/1x-cachantun-mas-sin-gas-sabor-manzana-botella-1600cc.jpg"}],
+  {"id": 12, "name": "Cachantun sin Gas","price": 1000, "img": "https://brindo.cl/57-medium_default/1x-cachantun-mas-sin-gas-sabor-manzana-botella-1600cc.jpg"}],
   "Products": {
     "Carnes": ["Carne", "Carne Mechada", "Pollo", "Salchicha", "Pepperoni"],"Vegetales": ["Champiñon", "Pimiento", "Cebolla", "Choclo", "Tomate"],"Queso": ["Gouda", "Mozzarella"]
   }
