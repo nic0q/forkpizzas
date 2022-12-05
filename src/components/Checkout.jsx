@@ -8,6 +8,7 @@ import to_clp from '../utilities/to_clp';
 import "../styles/checkout.css"
 import { useNavigate  } from "react-router-dom";
 
+
 export default function Checkout(){
   const navigate = useNavigate()
   const [cart, setCart] = useState(localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []);

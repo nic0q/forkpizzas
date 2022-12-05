@@ -1,17 +1,30 @@
 import products from "../products.json";
-import { useState } from "react";
+import { useEffect, useState } from 'react';
 import FoodCard from "./FoodCard";
 import add_to_cart from '../utilities/add_to_cart';
-import { useNavigate  } from "react-router-dom";
 import Cart from "./Cart";
 import remove_cart from '../utilities/remove_cart';
 import remove_from_cart from '../utilities/remove_from_cart';
-import {AiOutlineShoppingCart} from 'react-icons/ai';
-
+import Navbar from "./Navbar";
+import { Footer } from "./Footer";
+import add_quantity from '../utilities/add_quantity';
 
 export default function Menu() {
-  const navigate = useNavigate()
   const [cart, setCart] = useState(localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []);
+  const [total, setTotal] = useState(0);
+
+  useEffect(() => {
+    try {
+      let total = 0
+      cart.items.forEach((item) => {
+        total += item.price * item.quantity;
+      })
+      setTotal(total);
+    }
+    catch (e) {
+      setTotal(0);
+    }
+  }, [cart])
   const add = (name, id, img, price, ingredients = []) => {
     setCart(add_to_cart({name, ingredients, id, img, price}));
   }
@@ -21,13 +34,18 @@ export default function Menu() {
   const remove_item = (id) => {
     setCart(remove_from_cart(id))    
   }
-
+  const remove_one_item = (id) => {
+    setCart(remove_from_cart(id))    
+  }
+  const add_item = (id) => {
+    setCart(add_quantity(id))
+  }
   return (
-    <div className=" overflow-x-hidden">
-
+    <div className="flex flex-col overflow-x-hidden">
+      <Navbar n_cart_items = {cart.length !== 0 ? cart.items.length : 0}></Navbar>
     
-    <div className="flex flex-row w-screen bg-white text-black justify-center">
-      <div className="flex flex-col w-[70%]">
+    <div className="flex flex-row w-screen bg-[#F5F5F5] text-black justify-center pt-8 pb-32">
+      <div className="flex flex-col w-[50%] mr-3">
         <div className="flex justify-around border-2 border-gray-400 rounded-2xl py-3">
           <div ><a href="#pizzas">Pizzas</a></div>
           <div><a href="#bebidas">Bebidas</a></div>
@@ -45,16 +63,13 @@ export default function Menu() {
           </div>
         </div>
       </div>
-      <div className="relative bg-green-500 inline-block p-5 rounded-xl font-sans font-bold cursor-pointer h-24" onClick={()=>navigate("/checkout")}>
-        <AiOutlineShoppingCart className="w-14 h-14 text-white"/>
-        <div class="absolute mt-[-65px] ml-9 rounded-full text-lg bg-green-400 border-2 text-white px-2">
-          <span>{cart.length !== 0 ? cart.items.length : 0}</span>
-        </div>
+      <div>
+
       </div>
-
-
-      <Cart carte = {cart} remove_item = {remove_item} empty_cart = {empty_cart}></Cart>
-
-    </div></div>
+      
+      <Cart add_item = {add_item} remove_one_item = {remove_one_item} carte = {cart} remove_item = {remove_item} empty_cart = {empty_cart} total = {total}/>
+    </div>
+      <Footer/>
+    </div>
   )
 }
