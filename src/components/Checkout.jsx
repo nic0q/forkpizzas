@@ -62,7 +62,7 @@ export default function Checkout(){
       <div className="flex flex-col flex-nowrap bg-white rounded-xl w-full h-[90%] p-4 overflow-y-auto">
         <div className="flex justify-between">
           {/* <h1 className="text-xl">Finalizar Compra</h1> */}
-          <div className='flex flex-row text-start items-center mt-[-10px] cursor-pointer text-purple-500' onClick={()=>navigate("/menu")}>
+          <div className='flex flex-row text-start items-center mt-[-10px] cursor-pointer text-purple-500' onClick={()=>navigate("/forkpizzas")}>
             <BsFillArrowLeftCircleFill className='w-8 h-8 mr-2'/>
             <h2 className="underline decoration-wavy">Volver al menú</h2>
           </div>
