@@ -35,7 +35,7 @@ export default function Menu() {
         </div>
         <div className="border-2 border-gray-400 rounded-2xl my-3">
           <div className="flex flex-row justify-center" id="pizzas">
-            {products.Pizzas.map((pizza) => <FoodCard key={pizza.id} id = {pizza.id} name={pizza.name} ingredients={pizza.ingredients} price={pizza.price}  img = {pizza.img} add = {()=>add(pizza.name, pizza.id, pizza.img, pizza.price, pizza.ingredients)} size = {"w-48"}/>)}
+            {products.Pizzas.map((pizza) => <FoodCard key={pizza.id} id = {pizza.id} name={pizza.name} ingredients={pizza.ingredients} price={pizza.price}  img = {pizza.img} add = {()=>add(pizza.name, pizza.id, pizza.img, pizza.price, pizza.ingredients)} size = {"w-48 "}/>)}
           </div>
           <div className="flex flex-row justify-center" id="bebidas">
             {products.Bebidas.map((item) => <FoodCard key={item.id} id = {item.id} name={item.name} price={item.price} img={item.img} add = {()=>add(item.name, item.id, item.img, item.price)} size = {"w-32"}/>)}
