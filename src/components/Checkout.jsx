@@ -43,9 +43,8 @@ export default function Checkout(){
     <img className="w-[120px] ml-10 h-[90%]" alt = "pizza" src={img}></img>
     <div className='flex flex-col w-[35%]'>
       <h3 className="text-3xl">{name}</h3>
-      <h3 className="text-lg text-gray-500">{to_clp(price)}</h3>
+      <h3 className="text-lg mt-2 text-gray-500">{to_clp(price)}</h3>
     </div>
-    
     <div className="flex flex-row text-center align-middle justify-between items-center w-[15%]">
       <div className="btn" onClick={()=>remove_one_item(id)}>-</div>
       <div className="mx-3 w-10 text-3xl">{quantity}</div>
@@ -75,12 +74,12 @@ export default function Checkout(){
         <ProductCart key = {key} name = {item.name} quantity = {item.quantity} img = {item.img} id = {item.id} price = {item.price}/>): "Cart is empty"}
       </div>
       <br></br>
-      <div className="flex flex-col bg-yellow-400 items-end h-[12%] rounded-xl justify-center">
+      <div className="flex flex-col bg-yellow-400 items-end h-[15%] rounded-xl justify-center pt-1">
         <div className="flex flex-row rounded-xl">
-          <h3 className="text-2xl mr-5">Sub-Total</h3>
-          <h3 className="text-3xl w-20 mr-20">{to_clp(total)}</h3>
+          <h3 className="text-xl mr-5">Sub-Total</h3>
+          <h3 className="text-2xl w-20 mr-20">{to_clp(total)}</h3>
         </div>
-        <button type="button" className="font-sans text-xl px-36 mr-2 py-2.5 bg-black text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-purple-800 hover:shadow-lg active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out">
+        <button type="button" className="font-sans text-xl px-36 mr-2 py-2 bg-black text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-purple-800 hover:shadow-lg active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out">
           Pagar
         </button>
       </div>
