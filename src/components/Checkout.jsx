@@ -1,4 +1,5 @@
 import {BsFillArrowLeftCircleFill} from 'react-icons/bs';
+import {BiTrash} from 'react-icons/bi';
 import { useEffect, useState } from 'react';
 import remove_from_cart from '../utilities/remove_from_cart';
 import remove_cart from '../utilities/remove_cart';
@@ -39,7 +40,7 @@ export default function Checkout(){
 
   const ProductCart = ({name, quantity, price, img, id}) =>{
     return  <div className="flex shrink-0 grow-0 w-full h-[130px] my-1 bg-gray-300 rounded-xl items-center justify-between pr-4">
-    <img className="w-[20%] h-[90%]" alt = "pizza" src={img}></img>
+    <img className="w-[120px] ml-10 h-[90%]" alt = "pizza" src={img}></img>
     <div className='flex flex-col w-[35%]'>
       <h3 className="text-3xl">{name}</h3>
       <h3 className="text-lg text-gray-500">{to_clp(price)}</h3>
@@ -52,7 +53,7 @@ export default function Checkout(){
     </div>
     <div className="flex flex-col items-center w-[10%]">
       <div className="text-2xl">{to_clp(price * quantity)}</div>
-      <div className="text-red-500 text-sm underline decoration-wavy cursor-pointer" onClick={()=>remove_item(id)}>Remove</div>
+      <div className="text-red-500 text-sm underline decoration-wavy cursor-pointer" onClick={()=>remove_item(id)}>Eliminar</div>
     </div>
   </div>
   }
@@ -61,21 +62,25 @@ export default function Checkout(){
       <div className="flex flex-col flex-nowrap bg-white rounded-xl w-full h-[90%] p-4 overflow-y-auto">
         <div className="flex justify-between">
           {/* <h1 className="text-xl">Finalizar Compra</h1> */}
-          <div className='flex flex-row text-start items-center mt-[-20px] cursor-pointer' onClick={()=>navigate("/menu")}>
-            <BsFillArrowLeftCircleFill className='w-8 h-8 mr-2 text-purple-500'/>
-            <h2 className="text-purple-500 underline decoration-wavy">Volver al menú</h2>
+          <div className='flex flex-row text-start items-center mt-[-10px] cursor-pointer text-purple-500' onClick={()=>navigate("/menu")}>
+            <BsFillArrowLeftCircleFill className='w-8 h-8 mr-2'/>
+            <h2 className="underline decoration-wavy">Volver al menú</h2>
           </div>
-          <h2 className="text-red-500 underline decoration-wavy cursor-pointer mb-4" onClick={empty_cart}>Eliminar Productos</h2>
+          <div className='flex flex-row text-start items-center mt-[-10px] cursor-pointer text-red-500' onClick={empty_cart}>
+            <BiTrash className='w-8 h-8 mr-2'/>
+            <h2 className="underline decoration-wavy cursor-pointer">Eliminar Productos</h2>
+          </div>
         </div>
-        {cart.length !== 0 ? cart.items.map((item) =>
-        <ProductCart name = {item.name} quantity = {item.quantity} img = {item.img} id = {item.id} price = {item.price}/>): "Cart is empty"}
+        {cart.length !== 0 ? cart.items.map((item, key) =>
+        <ProductCart key = {key} name = {item.name} quantity = {item.quantity} img = {item.img} id = {item.id} price = {item.price}/>): "Cart is empty"}
       </div>
-      <div className="flex flex-col bg-yellow-400 items-end h-[12%] pr-4 rounded-xl justify-center">
+      <br></br>
+      <div className="flex flex-col bg-yellow-400 items-end h-[12%] rounded-xl justify-center">
         <div className="flex flex-row rounded-xl">
-          <h3 className="text-2xl mr-4">Sub-Total</h3>
-          <h3 className="text-3xl">{to_clp(total)}</h3>
+          <h3 className="text-2xl mr-5">Sub-Total</h3>
+          <h3 className="text-3xl w-20 mr-20">{to_clp(total)}</h3>
         </div>
-        <button type="button" className="font-sans text-xl px-24 mr-2 py-2.5 bg-black text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-purple-800 hover:shadow-lg active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out">
+        <button type="button" className="font-sans text-xl px-36 mr-2 py-2.5 bg-black text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-purple-800 hover:shadow-lg active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out">
           Pagar
         </button>
       </div>

@@ -1,10 +1,10 @@
 {
-  "Pizzas": [{"id": 1, "name": "Pizza Americana", "price": 5000,"ingredients": ["Jamón", "Carne", "Salchicha", "Pepperoni"], "img": "https://media.gettyimages.com/id/833378372/photo/generic-picture-of-a-pizza-from-pizza-hut.jpg?s=612x612&w=gi&k=20&c=3eWec5D5YN_YS8KWm-ihoVJBGSk5dcvE8brV7U_DtQI="}, 
-  {"id": 2, "name": "Pizza BBQ Chicken", "price": 6000,"ingredients": ["Salsa BBQ", "Pollo", "Cebolla"], "img": "https://media.gettyimages.com/id/833378372/photo/generic-picture-of-a-pizza-from-pizza-hut.jpg?s=612x612&w=gi&k=20&c=3eWec5D5YN_YS8KWm-ihoVJBGSk5dcvE8brV7U_DtQI="},
-  {"id": 3, "name": "Pizza Campesina", "price": 7000,"ingredients": ["Champiñon", "Pollo", "Pimiento"], "img": "https://media.gettyimages.com/id/833378372/photo/generic-picture-of-a-pizza-from-pizza-hut.jpg?s=612x612&w=gi&k=20&c=3eWec5D5YN_YS8KWm-ihoVJBGSk5dcvE8brV7U_DtQI="},
-  {"id": 4, "name": "Pizza Hawaiana", "price": 6500,"ingredients": ["Jamón", "Pollo", "Piña"], "img": "https://media.gettyimages.com/id/833378372/photo/generic-picture-of-a-pizza-from-pizza-hut.jpg?s=612x612&w=gi&k=20&c=3eWec5D5YN_YS8KWm-ihoVJBGSk5dcvE8brV7U_DtQI="},
-  {"id": 5, "name": "Pizza Mechada BBQ", "price": 5500,"ingredients": ["Carne Mechada", "Tomate", "Cebolla"], "img": "https://media.gettyimages.com/id/833378372/photo/generic-picture-of-a-pizza-from-pizza-hut.jpg?s=612x612&w=gi&k=20&c=3eWec5D5YN_YS8KWm-ihoVJBGSk5dcvE8brV7U_DtQI="},
-  {"id": 6, "name": "Pizza Vegan Queen", "price": 4000,"ingredients": ["Champiñon", "Pimiento", "Cebolla", "Choclo", "Tomate"], "img": "https://media.gettyimages.com/id/833378372/photo/generic-picture-of-a-pizza-from-pizza-hut.jpg?s=612x612&w=gi&k=20&c=3eWec5D5YN_YS8KWm-ihoVJBGSk5dcvE8brV7U_DtQI="}],
+  "Pizzas": [{"id": 1, "name": "Pizza Americana", "price": 14000,"ingredients": ["Jamón", "Carne", "Salchicha", "Pepperoni"], "img": "https://images.deliveryhero.io/image/pedidosya/products/c51bde16-927d-4a61-95e5-d6875bc22a52.jpg?quality=90&width=1920&webp=1"},
+  {"id": 2, "name": "Pizza BBQ Chicken", "price": 15000,"ingredients": ["Salsa BBQ", "Pollo", "Cebolla"], "img": "https://images.deliveryhero.io/image/pedidosya/products/f813241b-b77d-448c-86ce-64f5005e8677.jpg?quality=90&width=1920&webp=1"},
+  {"id": 3, "name": "Pizza Campesina", "price": 16000,"ingredients": ["Champiñon", "Pollo", "Pimiento"], "img": "https://images.deliveryhero.io/image/pedidosya/products/7876229c-e932-418a-bacb-fc7897ce3d17.jpg?quality=90&width=1920&webp=1"},
+  {"id": 4, "name": "Pizza Hawaiana", "price": 15000,"ingredients": ["Jamón", "Pollo", "Piña"], "img": "https://images.deliveryhero.io/image/pedidosya/products/78bf3b40-9b33-449f-99cf-dcee5a0ef8eb.jpg?quality=90&width=1920&webp=1"},
+  {"id": 5, "name": "Pizza Mechada BBQ", "price": 16000,"ingredients": ["Carne Mechada", "Tomate", "Cebolla"], "img": "https://images.deliveryhero.io/image/pedidosya/products/c51bde16-927d-4a61-95e5-d6875bc22a52.jpg?quality=90&width=1920&webp=1"},
+  {"id": 6, "name": "Pizza Vegan Queen", "price": 16000,"ingredients": ["Champiñon", "Pimiento", "Cebolla", "Choclo", "Tomate"], "img": "https://images.deliveryhero.io/image/pedidosya/products/c5637f80-ca66-4eb8-94e8-db6370a65ea4.jpg?quality=90&width=1920&webp=1"}],
   "Complements":[
     {"id": 13, "name": "Salsa BBQ", "price": 1000, "img": "https://pbs.twimg.com/media/B0vZM5VCYAImXGE.jpg"},
     {"id": 14, "name": "Salsa de Tomate", "price": 1000, "img": "https://pbs.twimg.com/media/B0vZM1XCMAA2iIH?format=jpg&name=900x900"},
@@ -12,10 +12,10 @@
     {"id": 16, "name": "Salsa Garlic", "price": 1000,"img": "https://pbs.twimg.com/media/B0vZM2gCQAAVyPH.jpg"}],
   "Bebidas": [{"id": 7, "name": "Coca Cola","price": 2000, "img": "https://brindo.cl/3-large_default/1x-coca-cola-lata-350cc.jpg"},
   {"id": 8, "name": "Fanta","price": 2000, "img": "https://brindo.cl/15-large_default/1x-fanta-lata-350cc.jpg"},
-  {"id": 9, "name": "Watts Durazno","price": 1500, "img": "https://brindo.cl/53-large_default/6x-nectar-watts-naranja-botella-1500cc.jpg"},
-  {"id": 10, "name": "Watts Piña","price": 1500, "img": "https://brindo.cl/53-large_default/6x-nectar-watts-naranja-botella-1500cc.jpg"},
-  {"id": 11, "name": "Cachantun con Gas","price": 1000, "img": "https://brindo.cl/756-medium_default/6x-cachantun-con-gas-botella-1600cc.jpg"},
-  {"id": 12, "name": "Cachantun sin Gas","price": 1000, "img": "https://brindo.cl/57-medium_default/1x-cachantun-mas-sin-gas-sabor-manzana-botella-1600cc.jpg"}],
+  {"id": 9, "name": "Watts Durazno","price": 1500, "img": "https://brindo.cl/52-home_default/1x-nectar-watts-naranja-botella-1500cc.jpg"},
+  {"id": 10, "name": "Watts Piña","price": 1500, "img": "https://brindo.cl/54-large_default/1x-nectar-watts-naranja-ligth-botella-1500cc.jpg"},
+  {"id": 11, "name": "Cachantun con Gas","price": 1000, "img": "https://brindo.cl/55-home_default/1x-cachantun-con-gas-botella-1600cc.jpg"},
+  {"id": 12, "name": "Cachantun sin Gas","price": 1000, "img": "https://brindo.cl/56-large_default/1x-cachantun-sin-gas-botella-1600cc.jpg"}],
   "Products": {
     "Carnes": ["Carne", "Carne Mechada", "Pollo", "Salchicha", "Pepperoni"],"Vegetales": ["Champiñon", "Pimiento", "Cebolla", "Choclo", "Tomate"],"Queso": ["Gouda", "Mozzarella"]
   }

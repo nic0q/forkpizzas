@@ -6,3 +6,6 @@ body {
   margin: 0;
   font-family: 'Marvelan', sans-serif;
 }
+html {
+  scroll-behavior: smooth;
+}
