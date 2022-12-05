@@ -38,11 +38,6 @@ export default function Cart({carte, remove_one_item, add_item, total = 0}) {
             </tr>): ''}
         </tbody>
       </table>
-      {/* <button className="bg-red-500 hover:bg-[#fa6161] text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow" onClick={empty_cart}>
-            <BiTrash className='text-red-100'/>
-      </button> */}
-
-
     </div>
     <div className="mt-auto">
     <hr className='bg-gray-400 h-[2px] mb-3'></hr>

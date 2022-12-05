@@ -27,7 +27,6 @@ export default function Navbar({n_cart_items}){
           <p>Pizzas Fork</p>
           <GiPitchfork className="w-10 h-10 font-bold"></GiPitchfork>
         </div>
-
       <ul className={"hidden md:flex text-white items-center"}>
         <li className="mx-10 hover:text-gray-300">
           <a href="#aboutMe">Menu</a>

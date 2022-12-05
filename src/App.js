@@ -11,6 +11,7 @@ export default function App() {
         <Route path="/forkpizzas" element={<Menu/>}/>
         <Route path="/my-pizza" element={<Customize/>}/>
         <Route path="/checkout" element={<Checkout/>}/>
+        <Route path="/custom" element={<Customize/>}/>
       </Routes>
     </>
   );
