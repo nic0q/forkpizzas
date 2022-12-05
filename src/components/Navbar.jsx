@@ -13,7 +13,7 @@ export default function Navbar({n_cart_items}){
     setNav(!nav)
   }
   const CV_LINK = "https://drive.google.com/file/d/1NOR8T9LKNtmHoWTI877jPu8yj-xIrEpX/view?usp=sharing"
-  return  <div className="w-full h-[70px] flex items-center px-w bg-transparent justify-evenly text-xl md:bg-[#e45f13]">
+  return  <div className="w-full h-[80px] flex items-center px-w bg-transparent justify-evenly text-xl md:bg-[#e45f13]">
       <div
         className="text-white md:hidden z-10 text-3xl m-3 flex fixed bottom-0 right-0"
         onClick={handleClick}>
@@ -23,25 +23,25 @@ export default function Navbar({n_cart_items}){
           <GiHamburgerMenu className="rounded-xl w-14 h-14 text-[#db2777] bg-[#04001E] p-[2px] pb-[3px] mr-1" />
         )}
       </div>
-        <div className="flex items-center border-2 border-purple-800 rounded-xl p-2 text-purple-700 font-bold bg-white" onClick={()=>navigate("/forkpizzas")}>
+        <div className="flex items-center border-2 border-purple-800 rounded-xl p-2 text-purple-700 bg-white hover:bg-gray-300 cursor-pointer" onClick={()=>navigate("/forkpizzas")}>
           <p>Pizzas Fork</p>
           <GiPitchfork className="w-10 h-10 font-bold"></GiPitchfork>
         </div>
 
       <ul className={"hidden md:flex text-white items-center"}>
-        <li className="mx-10">
+        <li className="mx-10 hover:text-gray-300">
           <a href="#aboutMe">Menu</a>
         </li>
-        <li className="mx-10">
+        <li className="mx-7 text-center hover:text-gray-300">
           <a href="#skills">Arma tu Pizza </a>
         </li>
-        <li className="mx-10">
+        <li className="mx-10 hover:text-gray-300">
           <a href="#contact">Locales</a>
         </li>
         <li>
-        <div className="relative bg-green-500 inline-block p-5 rounded-xl font-sans font-bold cursor-pointer h-24" onClick={()=>navigate("/checkout")}>
+        <div className="relative bg-green-500 inline-block p-2 mt-1 mr-6 rounded-xl font-sans font-bold cursor-pointer h-18 hover:bg-green-400" onClick={()=>navigate("/checkout")}>
         <AiOutlineShoppingCart className="w-14 h-14 text-white"/>
-          <div class="absolute mt-[-65px] ml-9 rounded-full text-lg bg-green-400 border-2 text-white px-2">
+          <div className="absolute mt-[-65px] ml-9 rounded-full text-lg bg-green-400 border-2 text-white px-2">
             <span>{n_cart_items}</span>
           </div>
         </div>

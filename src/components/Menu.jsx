@@ -67,17 +67,15 @@ export default function Menu() {
               {products.Pizzas.map((pizza) => <FoodCard key={pizza.id} id = {pizza.id} name={pizza.name} ingredients={pizza.ingredients} price={pizza.price}  img = {pizza.img} add = {()=>add(pizza.name, pizza.id, pizza.img, pizza.price, pizza.ingredients)} size = {"w-48 "}/>)}
             </div>
             <div className="flex flex-row justify-center" id="bebidas">
-              {products.Bebidas.map((item) => <FoodCard key={item.id} id = {item.id} name={item.name} price={item.price} img={item.img} add = {()=>add(item.name, item.id, item.img, item.price)} size = {"w-32"}/>)}
+              {products.Bebidas.map((item) => <FoodCard key={item.id} id = {item.id} name={item.name} price={item.price} img={item.img} add = {()=>add(item.name, item.id, item.img, item.price)} size = {"w-48 "}/>)}
             </div>
             <div className="flex flex-row justify-center" id="complementos">
-              {products.Complements.map((item) => <FoodCard key={item.id} id = {item.id} name={item.name} price={item.price} img={item.img} add = {()=>add(item.name, item.id, item.img, item.price)} size = {"w-48 pb-3"}/>)}
+              {products.Complements.map((item) => <FoodCard key={item.id} id = {item.id} name={item.name} price={item.price} img={item.img} add = {()=>add(item.name, item.id, item.img, item.price)} size = {"w-48 "}/>)}
             </div>
           </div>
         </div>
         <div>
-  
         </div>
-        
         <Cart add_item = {add_item} remove_one_item = {remove_one_item} carte = {cart} remove_item = {remove_item} empty_cart = {empty_cart} total = {total}/>
       </div>
         <Footer/>
