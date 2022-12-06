@@ -14,7 +14,10 @@ export default function Checkout(){
   const [cart, setCart] = useState(localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []);
   const [total, setTotal] = useState(0);
   const [tip, setTip] = useState(0);
-
+  const [payment, setPayment] = useState(-1)
+  const [delivery, setDelivery] = useState(-1)
+  const [deliveryCost, setDeliveryCost] = useState(0)
+  
   useEffect(() => {
     try {
       let total = 0
@@ -42,6 +45,10 @@ export default function Checkout(){
   const handleChange =  (percentage) => {
     setTip(percentage);
   };
+  const handleChangeDelivery =  (id, cost) => {
+    setDelivery(id)
+    setDeliveryCost(cost);
+  };
   const ProductCart = ({name, quantity, price, img, id}) =>{
     return  <div className="flex shrink-0 grow-0 w-full h-[100px] my-3 bg-gray-100 rounded-xl items-center justify-between pr-4 text-gray-800 shadow-xl drop-shadow-md">
     <img className="w-[100px] ml-10 h-[90%]" alt = "pizza" src={img}></img>
@@ -61,18 +68,37 @@ export default function Checkout(){
   </div>
   }
   return <div className="flex bg-gray-100 h-screen items-center justify-center">
-    <div className="flex flex-col w-[50%] h-[90%] m-6">
-      <div className='flex flex-row bg-white shadow-xl drop-shadow-md h-[50%] rounded-xl mb-3'>
-
+    <div className="flex flex-col w-[30%] h-[90%] m-6">
+      <h4>Método de entrega</h4>  
+      <div className='flex flex-col bg-white shadow-xl drop-shadow-md h-[60%] rounded-xl justify-around items-center mb-6'>
+      <div onClick={()=>handleChangeDelivery(0, 0)} className={`w-72 h-20 justify-evenly flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${delivery === 0 ? "bg-orange-300 " : 'bg-white cursor-pointer'}`}>
+          <p>Entrega en Local</p>
+          <p className='text-3xl'>🏬</p>
+        </div>
+        <div onClick={()=>handleChangeDelivery(1, 2500)} className={`w-72 h-20 justify-evenly flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${delivery === 1 ? "bg-red-300 " : 'bg-white cursor-pointer'}`}>
+          <p>a Domicilio</p>
+          <p className='text-3xl'>🏠</p>
+        </div>
       </div>
-      <div className='flex flex-row bg-white shadow-xl drop-shadow-md h-[50%] rounded-xl mt-3'>
-
-</div>
+      <h4>Seleccione el medio de pago</h4>  
+      <div className='flex flex-col bg-white shadow-xl drop-shadow-md h-[35%] rounded-xl justify-between items-center'>
+        <div onClick={()=>setPayment(0)} className={`w-72 h-20 justify-evenly flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${payment === 0 ? "bg-green-300 " : 'bg-white cursor-pointer'}`}>
+          <p>Efectivo</p>
+          <p className='text-3xl'>💵</p>
+        </div>
+        <div onClick={()=>setPayment(1)} className={`w-72 h-20 justify-evenly flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${payment === 1 ? "bg-blue-300 " : 'bg-white cursor-pointer'}`}>
+          <p>Targeta de Crédito</p>
+          <p className='text-3xl'>💳</p>
+        </div>
+        <div onClick={()=>setPayment(2)} className={`w-72 h-20 justify-evenly flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${payment === 2 ? "bg-yellow-300 " : 'bg-white cursor-pointer'}`}>
+          <p>WebPay</p>
+          <p className='text-3xl'>🏦</p>
+        </div>
+      </div>
     </div>
     <div className="flex flex-col w-[70%] h-[90%] mr-6 ">
       <div className="flex flex-col flex-nowrap bg-white rounded-xl w-full h-[90%] p-4 overflow-y-auto mb-6 shadow-xl drop-shadow-md">
         <div className="flex justify-between">
-
           <div className='flex flex-row text-start items-center mt-[-10px] cursor-pointer text-green-500' onClick={()=>navigate("/forkpizzas")}>
             <BsFillArrowLeftCircleFill className='w-8 h-8 mr-2'/>
             <h2 className="underline decoration-wavy">Volver al menú</h2>
@@ -85,23 +111,24 @@ export default function Checkout(){
         {cart.length !== 0 ? cart.items.map((item, key) =>
         <ProductCart key = {key} name = {item.name} quantity = {item.quantity} img = {item.img} id = {item.id} price = {item.price}/>): "Cart is empty"}
       </div>
+      <h4>¿Desea añadir propina?</h4>  
       <div className='flex justify-between'>
-      <div className="flex bg-white items-center h-full rounded-xl w-full mr-6 p-5 justify-around shadow-xl drop-shadow-md">
+      <div className="flex bg-white items-center h-full rounded-xl w-full mr-6 p-5 justify-around shadow-xl drop-shadow-md text-gray-800">
         <div className='flex flex-col items-center'>
-          <BiHappy className='w-24 h-24'/>
+          <BiHappy className='w-24 h-24 hover:text-gray-600'/>
           <p>Sin propina</p>
-          <input className='w-8 h-8 accent-green-600' onClick={()=>handleChange(0)} type="radio" name="tip"></input>
+          <input className='w-8 h-8 accent-green-600'  checked={tip === 0} onClick={()=>handleChange(0)} type="radio" name="tip"></input>
         </div>
         <div>
           <div className='flex flex-col items-center'>
-          <BiHappyBeaming className='w-24 h-24'/>
+          <BiHappyBeaming className='w-24 h-24 hover:text-gray-600'/>
           <p>5%</p>
           <input className='w-8 h-8 accent-green-600' onClick={()=>handleChange(0.05)} type="radio" name="tip"></input>
           </div>
         </div>
         <div>
           <div className='flex flex-col items-center'>
-            <BiHappyHeartEyes className='w-24 h-24'/>
+            <BiHappyHeartEyes className='w-24 h-24 hover:text-gray-600'/>
             <p>10%</p>
             <input className='w-8 h-8 accent-green-600' onClick={()=>handleChange(0.1)} type="radio" name="tip"></input>
           </div>
@@ -123,7 +150,7 @@ export default function Checkout(){
           <h3 className="text-lg mr-5 text-start">Delivery:</h3>
           </div>
           <div>
-          <h3 className="text-lg w-20 mr-10">{to_clp(total)}</h3>  
+          <h3 className="text-lg w-20 mr-10">{to_clp(deliveryCost)}</h3>  
           </div>
         </div>
         <div className="flex flex-row rounded-xl justify-between mb-2">
@@ -140,7 +167,7 @@ export default function Checkout(){
         
         <div className="flex flex-row rounded-xl justify-between mt-2">
         <div>
-          <h3 className="text-xl mr-5 my-2 text-start">Total  . . . . . . . . . . . . . . .</h3>
+          <h3 className="text-xl mr-5 my-2 text-start">Total  . . . . . . . . . </h3>
           </div>
           <div>
           <h3 className="text-2xl w-20 mr-10">{to_clp(total)}</h3>  
