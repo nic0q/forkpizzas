@@ -12,6 +12,7 @@ import {BiHappy, BiHappyBeaming, BiHappyHeartEyes} from 'react-icons/bi';
 export default function Checkout(){
   const navigate = useNavigate()
   const [cart, setCart] = useState(localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []);
+  const [subTotal, setSubTotal] = useState(0);
   const [total, setTotal] = useState(0);
   const [tip, setTip] = useState(0);
   const [payment, setPayment] = useState(-1)
@@ -20,16 +21,17 @@ export default function Checkout(){
   
   useEffect(() => {
     try {
-      let total = 0
+      let subtotal = 0
       cart.items.forEach((item) => {
-        total += item.price * item.quantity;
+        subtotal += item.price * item.quantity;
       })
-      setTotal(total);
+      setSubTotal(subtotal);
+      setTotal(subtotal + (tip * subtotal) + deliveryCost);
     }
     catch (e) {
       setTotal(0);
     }
-  }, [cart])
+  }, [cart, deliveryCost, tip])
   const empty_cart = () => {
     setCart(remove_cart());
   }
@@ -49,6 +51,15 @@ export default function Checkout(){
     setDelivery(id)
     setDeliveryCost(cost);
   };
+  const pay = () => {
+    if (payment === -1 || delivery === -1) {
+      alert("Seleccione un medio de pago y un tipo de entrega")
+    }
+    else {
+      alert("Gracias por su compra")
+      navigate("/")
+    }
+  }
   const ProductCart = ({name, quantity, price, img, id}) =>{
     return  <div className="flex shrink-0 grow-0 w-full h-[60px] my-3 bg-gray-100 rounded-xl items-center justify-between pr-4 text-gray-800 shadow-xl drop-shadow-md">
     <img className="w-[60px] ml-10 h-[90%]" alt = "pizza" src={img}></img>
@@ -67,10 +78,10 @@ export default function Checkout(){
     </div>
   </div>
   }
-  return <div className="flex bg-gray-100 h-screen items-center justify-center">
+  return <div className="flex bg-gray-100 h-screen items-center justify-center text-gray-700">
     <div className="flex flex-col w-[30%] h-[90%] m-6">
       <h4>Datos</h4>  
-      <div className='flex flex-col bg-white shadow-xl drop-shadow-md h-[20%] rounded-xl justify-around items-center mb-6'>
+      <div className='flex flex-col bg-white shadow-xl drop-shadow-md h-[18%] rounded-xl justify-around items-center mb-4'>
         <div className={`w-[90%] h-20 flex items-center`}>
           <p className='text-sm w-[30%] mr-8'>Ingrese su nombre</p>
           <input type="text" placeholder='Nombre' className='w-[70%] border-2 rounded-lg shadow-xl drop-shadow-md font-sans'></input>
@@ -80,32 +91,77 @@ export default function Checkout(){
           <input type="email" placeholder='Email' required className='w-[70%] border-2 rounded-lg shadow-xl drop-shadow-md font-sans'></input>
         </div>
       </div>
-      <h4>Método de entrega</h4>  
-      <div className='flex flex-col bg-white shadow-xl drop-shadow-md h-[25%] rounded-xl justify-around items-center mb-6'>
-      <div onClick={()=>handleChangeDelivery(0, 0)} className={`w-72 h-20 my-2 justify-evenly flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${delivery === 0 ? "bg-orange-300 " : 'bg-white cursor-pointer'}`}>
-          <p>Entrega en Local</p>
-          <p className='text-3xl'>🏬</p>
-        </div>
-        <div onClick={()=>handleChangeDelivery(1, 2500)} className={`w-72 h-20 my-2 justify-evenly flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${delivery === 1 ? "bg-red-300 " : 'bg-white cursor-pointer'}`}>
-          <p>a Domicilio</p>
-          <p className='text-3xl'>🏠</p>
-        </div>
-      </div>
       <h4>Seleccione el medio de pago</h4>  
-      <div className='flex flex-col bg-white shadow-xl drop-shadow-md h-[30%] rounded-xl justify-between items-center'>
-        <div onClick={()=>setPayment(0)} className={`w-72 h-20 my-2 justify-evenly flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${payment === 0 ? "bg-green-300 " : 'bg-white cursor-pointer'}`}>
+      <div className='flex flex-col bg-white shadow-xl drop-shadow-md h-[30%] rounded-xl justify-between items-center mb-4'>
+        <div onClick={()=>setPayment(0)} className={`w-72 h-20 my-1 justify-around flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${payment === 0 ? "bg-green-300 " : 'bg-white cursor-pointer'}`}>
           <p>Efectivo</p>
           <p className='text-3xl'>💵</p>
         </div>
-        <div onClick={()=>setPayment(1)} className={`w-72 h-20 my-2 justify-evenly flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${payment === 1 ? "bg-blue-300 " : 'bg-white cursor-pointer'}`}>
+        <div onClick={()=>setPayment(1)} className={`w-72 h-20 my-1 justify-around flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${payment === 1 ? "bg-blue-300 " : 'bg-white cursor-pointer'}`}>
           <p>Targeta de Crédito</p>
           <p className='text-3xl'>💳</p>
         </div>
-        <div onClick={()=>setPayment(2)} className={`w-72 h-20  my-2 justify-evenly flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${payment === 2 ? "bg-yellow-300 " : 'bg-white cursor-pointer'}`}>
+        <div onClick={()=>setPayment(2)} className={`w-72 h-20  my-1 justify-around flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${payment === 2 ? "bg-yellow-300 " : 'bg-white cursor-pointer'}`}>
           <p>WebPay</p>
           <p className='text-3xl'>🏦</p>
         </div>
       </div>
+      <h4>Método de entrega</h4>  
+      <div className='flex flex-col bg-white shadow-xl drop-shadow-md h-[18%] rounded-xl justify-around items-center mb-4'>
+      <div onClick={()=>handleChangeDelivery(0, 0)} className={`w-72 h-20 my-2 justify-around flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${delivery === 0 ? "bg-orange-300 " : 'bg-white cursor-pointer'}`}>
+          <p>Entrega en Local</p>
+          <p className='text-3xl'>🏬</p>
+        </div>
+        <div onClick={()=>handleChangeDelivery(1, 2500)} className={`w-72 h-20 my-2 justify-around flex items-center border-2 rounded-xl shadow-xl drop-shadow-md ${delivery === 1 ? "bg-red-300 " : 'bg-white cursor-pointer'}`}>
+          <p>a Domicilio</p>
+          <p className='text-3xl'>🏠</p>
+        </div>
+      </div>
+      {delivery === 1 ? <div className='h-[10%]'>
+        <h4>Dirección de entrega a domicilio</h4>
+        <div className='flex flex-col bg-white shadow-xl drop-shadow-md rounded-xl justify-between items-center'>
+        <div className={`w-[90%] h-20 flex items-center`}>
+            <p className='text-sm w-[20%] mr-8'>Dirección</p>
+            <input type="text" placeholder='Calle' className='w-[70%] border-2 rounded-lg shadow-xl drop-shadow-md font-sans mx-2'></input>
+            <select type="text" placeholder='Calle' className='w-[70%] border-2 rounded-lg shadow-xl drop-shadow-md font-sans'><option value="0">Seleccione una comuna</option>
+              <option value="2">La Reina</option>
+              <option value="3">Las Condes</option>
+              <option value="4">Lo Barnechea</option>
+              <option value="5">Lo Espejo</option>
+              <option value="6">Lo Prado</option>
+              <option value="7">Macul</option>
+              <option value="8">Maipú</option>
+              <option value="9">Ñuñoa</option>
+              <option value="10">Pedro Aguirre Cerda</option>
+              <option value="11">Peñalolén</option>
+              <option value="12">Providencia</option>
+              <option value="13">Pudahuel</option>
+              <option value="14">Quilicura</option>
+              <option value="15">Quinta Normal</option>
+              <option value="16">Recoleta</option>
+              <option value="17">Renca</option>
+              <option value="18">San Joaquín</option>
+              <option value="19">San Miguel</option>
+              <option value="20">San Ramón</option>
+              <option value="21">Santiago</option>
+              <option value="22">Vitacura</option>
+            </select>
+          </div>
+        </div>
+      </div> : delivery === 0 ? <div className='h-[10%]'>
+        <h4>Dirección de entrega en local</h4>
+        <div className='flex flex-col bg-white shadow-xl drop-shadow-md rounded-xl justify-between items-center'>
+        <div className={`w-[90%] h-20 flex items-center`}>
+            <p className='text-sm w-[30%] mr-8'>Locales</p>
+            <select type="text" placeholder='Calle' className='w-[70%] border-2 rounded-lg shadow-xl drop-shadow-md font-sans'><option value="0">Seleccione una sucursal</option>
+              <option value="1">Sucursal 1</option>
+              <option value="2">Sucursal 2</option>
+              <option value="3">Sucursal 3</option>
+              <option value="4">Sucursal 4</option>
+            </select>
+          </div>
+        </div>
+      </div> : ''}
     </div>
     <div className="flex flex-col w-[70%] h-full pt-8 mr-6 ">
       <div className="flex flex-col flex-nowrap bg-white rounded-xl w-full h-full p-4 overflow-y-auto mb-6 shadow-xl drop-shadow-md">
@@ -152,7 +208,7 @@ export default function Checkout(){
           <h3 className="text-lg mr-5 text-start">Sub-Total: </h3>
           </div>
           <div>
-          <h3 className="text-lg w-20 mr-10">{to_clp(total)}</h3>  
+          <h3 className="text-lg w-20 mr-10">{to_clp(subTotal)}</h3>  
           </div>
           
         </div>
@@ -169,7 +225,7 @@ export default function Checkout(){
           <h3 className="text-lg mr-5 text-start">Propina:</h3>
           </div>
           <div>
-          <h3 className="text-lg w-20 mr-10">{to_clp(total * tip)}</h3>  
+          <h3 className="text-lg w-20 mr-10">{to_clp(subTotal * tip)}</h3>  
           </div>
         </div>
         <div>
@@ -184,7 +240,7 @@ export default function Checkout(){
           <h3 className="text-2xl w-20 mr-10">{to_clp(total)}</h3>  
           </div>
         </div>
-        <button type="button" className="font-sans text-xl w-full mt-2 py-2 bg-green-500 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-green-400 hover:shadow-lg active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out">
+        <button onClick={pay} type="button" className="font-sans text-xl w-full mt-2 py-2 bg-green-500 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-green-400 hover:shadow-lg active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out">
           Pagar
         </button>
         </div>
