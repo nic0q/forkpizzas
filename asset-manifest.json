@@ -1,15 +1,15 @@
 {
   "files": {
-    "main.css": "/forkpizzas/static/css/main.44b87bd7.css",
-    "main.js": "/forkpizzas/static/js/main.f4195206.js",
+    "main.css": "/forkpizzas/static/css/main.1336a0e9.css",
+    "main.js": "/forkpizzas/static/js/main.7d535115.js",
     "static/js/787.b25f6be3.chunk.js": "/forkpizzas/static/js/787.b25f6be3.chunk.js",
     "index.html": "/forkpizzas/index.html",
-    "main.44b87bd7.css.map": "/forkpizzas/static/css/main.44b87bd7.css.map",
-    "main.f4195206.js.map": "/forkpizzas/static/js/main.f4195206.js.map",
+    "main.1336a0e9.css.map": "/forkpizzas/static/css/main.1336a0e9.css.map",
+    "main.7d535115.js.map": "/forkpizzas/static/js/main.7d535115.js.map",
     "787.b25f6be3.chunk.js.map": "/forkpizzas/static/js/787.b25f6be3.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.44b87bd7.css",
-    "static/js/main.f4195206.js"
+    "static/css/main.1336a0e9.css",
+    "static/js/main.7d535115.js"
   ]
 }
