@@ -56,9 +56,7 @@ export default function Menu() {
         "Loading..."
       ) : (
         <div className="flex flex-col overflow-x-hidden">
-          <Navbar
-            n_cart_items={cart.length !== 0 ? cart.items.length : 0}
-          ></Navbar>
+          <Navbar></Navbar>
           <div className="flex flex-row w-screen bg-[#F5F5F5] text-black justify-center pt-8 pb-32">
             <div className="flex flex-col w-[65%] mr-3">
               <div className="flex justify-around border-2 border-gray-400 rounded-2xl py-3">

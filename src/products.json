@@ -17,7 +17,146 @@
   {"id": 10, "name": "Watts Piña","price": 1500, "img": "https://brindo.cl/54-large_default/1x-nectar-watts-naranja-ligth-botella-1500cc.jpg"},
   {"id": 11, "name": "Cachantun con Gas","price": 1000, "img": "https://brindo.cl/55-home_default/1x-cachantun-con-gas-botella-1600cc.jpg"},
   {"id": 12, "name": "Cachantun sin Gas","price": 1000, "img": "https://brindo.cl/56-large_default/1x-cachantun-sin-gas-botella-1600cc.jpg"}],
-  "Products": {
-    "Carnes": ["Carne", "Carne Mechada", "Pollo", "Salchicha", "Pepperoni"],"Vegetales": ["Champiñon", "Pimiento", "Cebolla", "Choclo", "Tomate"],"Queso": ["Gouda", "Mozzarella"]
-  }
+  "Extras": {
+    "Carnes": [{
+      "id": 1,
+      "name": "Carne",
+      "image": "https://www.svgrepo.com/show/417242/tuna.svg",
+      "price": 1000
+    },
+    { "id": 2,"name": "Mechada", "price": 1000 },
+    {
+      "id": 3,
+      "name": "Pepperoni",
+      "image": "https://www.svgrepo.com/show/417228/pepperoni.svg",
+      "price": 1000
+    },
+    {
+      "id": 4,
+      "name": "Salchicha",
+      "image": "https://www.svgrepo.com/show/417235/sausage.svg",
+      "price": 1000
+    },
+    {
+      "id": 5,
+      "name": "Jamón",
+      "image": "https://www.svgrepo.com/show/417253/ham.svg",
+      "price": 1000
+    },
+    {
+      "id": 6,
+      "name": "Pollo",
+      "image": "https://www.svgrepo.com/show/417249/chicken.svg",
+      "price": 1000
+    },
+    {
+      "id": 7,
+      "name": "Tocino",
+      "image": "https://www.svgrepo.com/show/417243/bacon.svg",
+      "price": 1000
+    }]
+    ,"Vegetales": [
+      {
+        "id": 8,
+        "name": "Aceitunas",
+        "image": "https://www.svgrepo.com/show/417247/black-olives.svg",
+        "price": 1000
+      },
+      {
+        "id": 9,
+        "name": "Choclo",
+        "image": "https://www.svgrepo.com/show/417241/sweet-corn.svg",
+        "price": 1000
+      },
+      {
+        "id": 10,
+        "name": "Piña",
+        "image": "https://www.svgrepo.com/show/417232/pineapple.svg",
+        "price": 1000
+      },
+      {
+        "id": 11,
+        "name": "Cebolla",
+        "image": "https://www.svgrepo.com/show/417236/red-onion.svg",
+        "price": 1000
+      },
+      {
+        "id": 12,
+        "name": "Pimiento",
+        "image": "https://www.svgrepo.com/show/417227/mixed-peppers.svg",
+        "price": 1000
+      },
+      {
+        "id": 13,
+        "name": "Tomate",
+        "image": "https://www.svgrepo.com/show/417240/tomato.svg",
+        "price": 1000
+      },
+      {
+        "id": 14,
+        "name": "Champiñones",
+        "image": "https://www.svgrepo.com/show/417230/mushrooms.svg",
+        "price": 1000
+      }],
+    "Pizza_size": [
+      {
+        "id": 15,
+        "name": "Familiar",
+        "price": 1000
+      },
+      {
+        "id": 16,
+        "name": "Mediana",
+        "price": 1000
+      },
+      {
+        "id": 17,
+        "name": "Personal",
+        "price": 1000
+      }
+    ],
+    "Cheese_type": [
+      {
+        "id": 18,
+        "name": "Gouda",
+        "image": "https://www.svgrepo.com/show/58608/cheese.svg",
+        "price": 1000
+      },
+      {
+        "id": 19,
+        "name": "Mozzarella",
+        "image": "https://www.svgrepo.com/show/417229/mozzarella.svg",
+        "price": 1000
+      }
+    ],
+    "Cheese_quantity": [
+      {
+        "id": 20,
+        "name": "Normal",
+        "price": 1000
+      },
+      {
+        "id": 21,
+        "name": "Extra",
+        "price": 1000
+      },
+      {
+        "id": 22,
+        "name": "Doble",
+        "price": 1000
+      }
+    ],
+    "Dought_Width": [
+      {
+        "id": 23,
+        "name": "Normal",
+        "price": 1000
+      },
+      {
+        "id": 24,
+        "name": "Delgada",
+        "price": 1000
+      }
+    ]
+    }
 }

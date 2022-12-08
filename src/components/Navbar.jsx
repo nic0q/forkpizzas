@@ -6,7 +6,9 @@ import { GiPitchfork } from "react-icons/gi"
 import { useNavigate } from "react-router-dom"
 import { AiOutlineShoppingCart } from "react-icons/ai"
 
-export default function Navbar({ n_cart_items }) {
+export default function Navbar() {
+  let cart = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
+
   const navigate = useNavigate()
   const [nav, setNav] = useState(false)
   const handleClick = () => {
@@ -30,7 +32,7 @@ export default function Navbar({ n_cart_items }) {
         className="flex items-center border-2 border-purple-800 rounded-xl p-2 text-purple-700 bg-white hover:bg-gray-300 cursor-pointer"
         onClick={() => navigate("/forkpizzas")}
       >
-        <p>Pizzas Fork</p>
+        <p>Fork Pizzas</p>
         <GiPitchfork className="w-10 h-10 font-bold"></GiPitchfork>
       </div>
       <ul className={"hidden md:flex text-white items-center"}>
@@ -50,7 +52,8 @@ export default function Navbar({ n_cart_items }) {
           >
             <AiOutlineShoppingCart className="w-14 h-14 text-white" />
             <div className="absolute mt-[-65px] ml-9 rounded-full text-lg bg-green-400 border-2 text-white px-2">
-              <span>{n_cart_items}</span>
+              
+              {cart.length !== 0 ? <span>{cart.items.length}</span> : <span>0</span>}
             </div>
           </div>
         </li>
