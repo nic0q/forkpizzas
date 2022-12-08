@@ -59,7 +59,7 @@ export default function Menu() {
           <Navbar></Navbar>
           <div className="flex flex-row w-screen bg-[#F5F5F5] text-black justify-center pt-8 pb-32">
             <div className="flex flex-col w-[65%] mr-3">
-              <div className="flex justify-around border-2 border-gray-400 rounded-2xl py-3">
+              <div className="flex justify-around rounded-2xl py-3 border-2 border-gray-200 shadow-xl drop-shadow-xl bg-white">
                 <div>
                   <a href="#pizzas">Pizzas</a>
                 </div>
@@ -70,7 +70,7 @@ export default function Menu() {
                   <a href="#complementos">Complementos</a>
                 </div>
               </div>
-              <div className="border-2 border-gray-400 rounded-2xl my-3">
+              <div className="border-2 border-gray-200 shadow-xl drop-shadow-xl rounded-2xl my-3 bg-white">
                 <div className="flex flex-row justify-center" id="pizzas">
                   {products.Pizzas.map((pizza) => (
                     <FoodCard
@@ -121,7 +121,6 @@ export default function Menu() {
                 </div>
               </div>
             </div>
-            <div></div>
             <Cart
               add_item={add_item}
               remove_one_item={remove_one_item}

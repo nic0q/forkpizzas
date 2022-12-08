@@ -35,7 +35,7 @@ const IngredientList = ({ name, ingredients, addIngredient, ingredientList }) =>
 }
 export default function Customize() {
   const navigate = useNavigate()
-  const [ingredientsCost, setIngredientsCost] = useState(0)
+  const [ingredientsCost, setIngredientsCost] = useState(12000)
   const [ingredientList, setIngredientList] = useState([])
   const add = (id, price) => {
     if(!ingredientList.includes(id) ){
@@ -52,10 +52,10 @@ export default function Customize() {
     navigate("/checkout")
   }
   return (
-    <div>
+    <div className="flex flex-col overflow-x-hidden">
       <Navbar></Navbar>
-    <div className="flex flex-col bg-gray-300 h-screen items-center justify-center text-sm  text-gray-700">
-      <div className="flex bg-gray-100 w-[70%] rounded-2xl shadow-xl drop-shadow-md">
+    <div className="flex flex-col bg-gray-300 items-center justify-center text-sm  text-gray-700">
+      <div className="flex bg-gray-100 w-[80%] mt-8 rounded-2xl shadow-xl drop-shadow-md">
         <div className="flex flex-col">
         <h2 className="text-xl p-2">Craftear Pizza</h2>
         <div className="pl-6 pt-6 ">

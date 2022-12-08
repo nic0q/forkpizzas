@@ -5,13 +5,13 @@ export default function Cart({ carte, remove_one_item, add_item, total = 0 }) {
   const navigate = useNavigate()
 
   return (
-    <div className="flex flex-col w-[15%] h-[80%] border-2 border-gray-400 rounded-2xl p-3 fixed right-2 z-10 bg-gray-200 scroll-smooth">
+    <div className="flex flex-col w-[15%] h-[80%] border-2 border-gray-200 shadow-xl drop-shadow-xl rounded-2xl p-3 fixed right-2 z-10 bg-white scroll-smooth">
       <div className="">
         <div
           className="flex font-bold cursor-pointer justify-between items-center text-gray-100  bg-green-500 p-5 mb-2 text-start rounded-xl font-sans"
           onClick={() => navigate("/checkout")}
         >
-          <div className="w-full text-xs">Continuar con el pago</div>
+          <div className="w-full text-sm">Ir a pagar</div>
           <div>{to_clp(total)}</div>
         </div>
         <hr className="bg-gray-400 h-[2px] mb-3"></hr>

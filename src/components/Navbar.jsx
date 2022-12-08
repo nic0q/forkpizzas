@@ -17,7 +17,7 @@ export default function Navbar() {
   const CV_LINK =
     "https://drive.google.com/file/d/1NOR8T9LKNtmHoWTI877jPu8yj-xIrEpX/view?usp=sharing"
   return (
-    <div className="w-full h-[80px] flex items-center px-w bg-transparent justify-evenly text-xl md:bg-[#e45f13]">
+    <div className="w-full h-[80px] flex items-center px-w bg-transparent justify-evenly text-xl md:bg-[#e45f13] shadow-xl drop-shadow-xl">
       <div
         className="text-white md:hidden z-10 text-3xl m-3 flex fixed bottom-0 right-0"
         onClick={handleClick}
@@ -29,7 +29,7 @@ export default function Navbar() {
         )}
       </div>
       <div
-        className="flex items-center border-2 border-purple-800 rounded-xl p-2 text-purple-700 bg-white hover:bg-gray-300 cursor-pointer"
+        className="flex items-center border-2 border-purple-800 rounded-xl p-2 text-purple-700 bg-gray-200 hover:border-purple-500 cursor-pointer"
         onClick={() => navigate("/forkpizzas")}
       >
         <p>Fork Pizzas</p>
@@ -64,7 +64,7 @@ export default function Navbar() {
               href={CV_LINK} // English version
               rel="noreferrer"
             >
-              <span>Pizza Gratis?</span>
+              <span>Pizza Gratis ?</span>
             </a>
           </button>
         </li>

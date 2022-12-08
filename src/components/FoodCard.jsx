@@ -12,7 +12,7 @@ export default function FoodCard({
   return (
     <div
       className={
-        "flex-row rounded-lg border-2 text-center m-1 pb-2 bg-gray-200 w-48"
+        "flex-row rounded-lg text-center m-1 pb-2 bg-gray-100 w-48 text-gray-800"
       }
     >
       <img className={size} alt="pizza" src={img}></img>
