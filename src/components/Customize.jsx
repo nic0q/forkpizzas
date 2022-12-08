@@ -52,12 +52,12 @@ export default function Customize() {
     navigate("/checkout")
   }
   return (
-    <div className="flex flex-col overflow-x-hidden">
+    <div className="flex flex-col w-full h-full bg-gray-300 items-center">
       <Navbar></Navbar>
-    <div className="flex flex-col bg-gray-300 items-center justify-center text-sm  text-gray-700">
-      <div className="flex bg-gray-100 w-[80%] mt-8 rounded-2xl shadow-xl drop-shadow-md">
+    <div className="flex flex-col items-center justify-center text-sm  text-gray-700">
+      <div className="flex bg-gray-100 mt-8 rounded-2xl shadow-xl drop-shadow-md w-[80%]">
         <div className="flex flex-col">
-        <h2 className="text-xl p-2">Craftear Pizza</h2>
+        <h2 className="text-xl p-2">Crear Pizza</h2>
         <div className="pl-6 pt-6 ">
           <IngredientList name={"Carnes"} ingredients={products.Extras.Carnes} addIngredient={add} ingredientList={ingredientList}/>
           <IngredientList name={"Vegetales"} ingredients={products.Extras.Vegetales} addIngredient={add} ingredientList={ingredientList}/>

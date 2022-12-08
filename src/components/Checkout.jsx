@@ -343,12 +343,19 @@ export default function Checkout() {
                   <h3 className="text-2xl w-20 mr-10">{to_clp(total)}</h3>
                 </div>
               </div>
+              <div className={`w-[90%] h-20 flex items-center`}>
+            <p className="text-xs w-[60%] mr-8">Desea Boleta o Factura</p>
+             <select className="bg-gray-300 px-6 border-2 rounded-xl">
+              <option value="Boleta">Boleta</option>
+              <option value="Factura">Factura</option>
+             </select>
+          </div>
               <button
                 onClick={pay}
                 type="button"
-                className="font-sans text-xl w-full mt-2 py-2 bg-green-500 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-green-400 hover:shadow-lg active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out"
+                className="font-sans text-xl w-full py-2 bg-green-500 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-green-400 hover:shadow-lg active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out"
               >
-                Pagar
+                {payment === 0 ? "Hacer Pedido" : payment === 1 ? "Proceder al pago" : payment === 2 ? "Continuar con WebPay" : "Pagar"}
               </button>
             </div>
           </div>
