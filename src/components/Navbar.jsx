@@ -100,9 +100,6 @@ export default function Navbar() {
         </li>
 
         <button className="my-8 font-bold border-none p-1 px-6 text-xl py-2 rounded-full bg-[#E41476]">
-          <a target={"_blank"} href={CV_LINK} rel="noreferrer">
-            CV GDrive
-          </a>
         </button>
       </ul>
     </div>
