@@ -4,6 +4,7 @@ import to_clp from "../utilities/to_clp"
 import add_to_cart from "../utilities/add_to_cart"
 import Navbar from "./Navbar"
 import { useNavigate } from "react-router-dom"
+import { Footer } from "./Footer"
 const Ingredient = ({ id, name, image = "", price, addIngredient, ingredientList = [] }) => {
   return (
     <div
@@ -54,7 +55,7 @@ export default function Customize() {
   return (
     <div className="flex flex-col w-full h-full bg-gray-300 items-center">
       <Navbar></Navbar>
-    <div className="flex flex-col items-center justify-center text-sm  text-gray-700">
+    <div className="flex flex-col items-center justify-center text-sm  text-gray-700 pb-8">
       <div className="flex bg-gray-100 mt-8 rounded-2xl shadow-xl drop-shadow-md w-[80%]">
         <div className="flex flex-col">
         <h2 className="text-xl p-2">Crear Pizza</h2>
@@ -81,6 +82,7 @@ export default function Customize() {
         </div>
       </div>
     </div>
+    <Footer></Footer>
     </div>
   )
 }

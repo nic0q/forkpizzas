@@ -2,7 +2,7 @@ import { Footer } from "./Footer";
 import Navbar from "./Navbar";
 
 const Branch = ({name, address, phone}) => {
-  return <div className="border-2 border-black p-4 rounded-2xl bg-orange-500 ">
+  return <div className="border-2 border-gray-300 p-4 rounded-2xl bg-orange-500 shadow-xl drop-shadow-md">
     <h2 className="text-2xl font-bold">{name}</h2>
     <p className="text-lg text-gray-200">{address}</p>
     <p className="text-lg text-gray-200">{phone}</p>
@@ -11,9 +11,9 @@ const Branch = ({name, address, phone}) => {
 
 
 export default function Branches(){
-  return <div className="flex flex-col w-full h-screen items-center">
+  return <div className="flex flex-col w-full h-screen bg-gray-200 items-center">
     <Navbar></Navbar>
-    <div className="flex flex-col w-full h-full bg-gray-200 items-center pt-8 mb-8">
+    <div className="flex flex-col w-full h-full  items-center pt-8 mb-8">
       <h1 className="text-3xl font-bold">Sucursales en todo Santiago 🇨🇱</h1>
       <div className="flex flex-wrap w-[95%] items center gap-4 mt-8 justify-center">
         <Branch name="Santiago" address="Av. Apoquindo 5000, Las Condes" phone="+56 9 1234 5678"></Branch>

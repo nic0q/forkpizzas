@@ -8,14 +8,12 @@ import { AiOutlineShoppingCart } from "react-icons/ai"
 
 export default function Navbar() {
   let cart = localStorage.getItem("cart") ? JSON.parse(localStorage.getItem("cart")) : []
-
   const navigate = useNavigate()
   const [nav, setNav] = useState(false)
   const handleClick = () => {
     setNav(!nav)
   }
-  const CV_LINK =
-    "https://drive.google.com/file/d/1NOR8T9LKNtmHoWTI877jPu8yj-xIrEpX/view?usp=sharing"
+
   return (
     <div className="w-full h-[80px] flex items-center px-w bg-transparent justify-evenly text-xl md:bg-[#e45f13] shadow-xl drop-shadow-xl">
       <div
@@ -58,50 +56,12 @@ export default function Navbar() {
           </div>
         </li>
         <li>
-          <button className="font-bold border-none p-1 px-3 text-xl py-2 rounded-full bg-purple-800">
-            <a
-              target={"_blank"}
-              href={CV_LINK} // English version
-              rel="noreferrer"
-            >
+          <button className="font-bold border-none p-1 px-3 text-xl py-2 rounded-full bg-purple-800" onClick={()=>alert("Te la creiste wey XD")}>
               <span>Pizza Gratis ?</span>
-            </a>
           </button>
         </li>
       </ul>
       {/* Mobile Responsibe */}
-
-      <ul
-        className={
-          nav
-            ? "flex flex-col bg-[#04001E] justify-center items-center absolute top-0 left-0 w-full h-screen text-white text-4xl"
-            : "hidden"
-        }
-      >
-        <li className="py-8 font-semibold">
-          <a href="#aboutMe" onClick={handleClick}>
-            About Me
-          </a>
-        </li>
-        <li className="py-8 font-semibold">
-          <a href="#skills" onClick={handleClick}>
-            Skills
-          </a>
-        </li>
-        <li className="py-8 font-semibold">
-          <a href="#projects" onClick={handleClick}>
-            Projects
-          </a>
-        </li>
-        <li className="py-8 font-semibold">
-          <a href="#contact" onClick={handleClick}>
-            Contact
-          </a>
-        </li>
-
-        <button className="my-8 font-bold border-none p-1 px-6 text-xl py-2 rounded-full bg-[#E41476]">
-        </button>
-      </ul>
     </div>
   )
 }
