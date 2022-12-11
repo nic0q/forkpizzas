@@ -9,7 +9,7 @@ export default function Cart({ carte, remove_one_item, add_item, total = 0 }) {
       <div className="">
         <div
           className="flex font-bold cursor-pointer justify-between items-center text-gray-100  bg-green-500 p-5 mb-2 text-start rounded-xl font-sans"
-          onClick={() => navigate("/checkout")}
+          onClick={() => navigate("/forkpizzas/checkout")}
         >
           <div className="w-full text-sm">Ir a pagar</div>
           <div>{to_clp(total)}</div>
@@ -19,7 +19,7 @@ export default function Cart({ carte, remove_one_item, add_item, total = 0 }) {
           <thead>
             <tr>
               <th className="w-[50%] text-sm text-start">Pedido</th>
-              <th className="w-[35%] text-xs text-start">Sub-Total</th>
+              <th className="w-[40%] text-xs text-start">Sub-Total</th>
             </tr>
           </thead>
           <tbody className="text-xs font-sans">

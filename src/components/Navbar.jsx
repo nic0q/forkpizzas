@@ -39,16 +39,16 @@ export default function Navbar() {
         <li className="mx-10 hover:text-gray-300 cursor-pointer" onClick={() => navigate("/forkpizzas")}>
           Menu
         </li>
-        <li className="mx-7 text-center hover:text-gray-300 cursor-pointer" onClick={() => navigate("/custom")}>
+        <li className="mx-7 text-center hover:text-gray-300 cursor-pointer" onClick={() => navigate("/forkpizzas/my-pizza")}>
           Arma tu Pizza
         </li>
-        <li className="mx-10 hover:text-gray-300 cursor-pointer" onClick={() => navigate("/custom")}>
+        <li className="mx-10 hover:text-gray-300 cursor-pointer" onClick={() => navigate("/forkpizzas/branches")}>
           Locales
         </li>
         <li>
           <div
             className="relative bg-green-500 inline-block p-2 mt-1 mr-6 rounded-xl font-sans font-bold cursor-pointer h-18 hover:bg-green-400"
-            onClick={() => navigate("/checkout")}
+            onClick={() => navigate("/forkpizzas/checkout")}
           >
             <AiOutlineShoppingCart className="w-14 h-14 text-white" />
             <div className="absolute mt-[-65px] ml-9 rounded-full text-lg bg-green-400 border-2 text-white px-2">

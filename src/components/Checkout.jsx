@@ -53,11 +53,15 @@ export default function Checkout() {
     setDeliveryCost(cost)
   }
   const pay = () => {
-    if (payment === -1 || delivery === -1) {
-      alert("Seleccione un medio de pago y un tipo de entrega")
-    } else {
+    if (payment === -1) {
+      alert("Seleccione un medio de pago")
+    } 
+    if (delivery === -1) {
+      alert("Seleccione un medio de entrega")
+    }
+    else {
       alert("Gracias por su compra")
-      navigate("/")
+      navigate("/forkpizzas")
     }
   }
   const ProductCart = ({ name, quantity, price, img, id }) => {

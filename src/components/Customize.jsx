@@ -35,7 +35,7 @@ const IngredientList = ({ name, ingredients, addIngredient, ingredientList }) =>
 }
 export default function Customize() {
   const navigate = useNavigate()
-  const [ingredientsCost, setIngredientsCost] = useState(12000)
+  const [ingredientsCost, setIngredientsCost] = useState(8000)
   const [ingredientList, setIngredientList] = useState([])
   const add = (id, price) => {
     if(!ingredientList.includes(id) ){
@@ -49,7 +49,7 @@ export default function Customize() {
   }
   const submitPizza = () => {
     add_to_cart({name:"Pizza Personalizada", ingredients:[], id:999 , img:"https://images.deliveryhero.io/image/pedidosya/products/c51bde16-927d-4a61-95e5-d6875bc22a52.jpg?quality=90&width=1920&webp=1", price:ingredientsCost})
-    navigate("/checkout")
+    navigate("/forkpizzas/checkout")
   }
   return (
     <div className="flex flex-col w-full h-full bg-gray-300 items-center">
@@ -68,7 +68,7 @@ export default function Customize() {
         </div>
         <div className="mt-auto px-16">
         <hr className="bg-gray-400 h-[2px] mb-3"></hr>
-        <div className="flex justify-around">
+        <div className="flex justify-around mb-6 text-xl">
           <div>
             Total
           </div>

@@ -1,10 +1,10 @@
 {
-  "Pizzas": [{"id": 1, "name": "Pizza Americana", "price": 14000,"ingredients": ["Jamón", "Carne", "Salchicha", "Pepperoni"], "img": "https://images.deliveryhero.io/image/pedidosya/products/c51bde16-927d-4a61-95e5-d6875bc22a52.jpg?quality=90&width=1920&webp=1"},
-  {"id": 2, "name": "Pizza BBQ Chicken", "price": 15000,"ingredients": ["Salsa BBQ", "Pollo", "Cebolla"], "img": "https://images.deliveryhero.io/image/pedidosya/products/f813241b-b77d-448c-86ce-64f5005e8677.jpg?quality=90&width=1920&webp=1"},
-  {"id": 3, "name": "Pizza Campesina", "price": 16000,"ingredients": ["Champiñon", "Pollo", "Pimiento"], "img": "https://images.deliveryhero.io/image/pedidosya/products/7876229c-e932-418a-bacb-fc7897ce3d17.jpg?quality=90&width=1920&webp=1"},
-  {"id": 4, "name": "Pizza Hawaiana", "price": 15000,"ingredients": ["Jamón", "Pollo", "Piña"], "img": "https://images.deliveryhero.io/image/pedidosya/products/78bf3b40-9b33-449f-99cf-dcee5a0ef8eb.jpg?quality=90&width=1920&webp=1"},
-  {"id": 5, "name": "Pizza Mechada BBQ", "price": 16000,"ingredients": ["Carne Mechada", "Tomate", "Cebolla"], "img": "https://images.deliveryhero.io/image/pedidosya/products/c51bde16-927d-4a61-95e5-d6875bc22a52.jpg?quality=90&width=1920&webp=1"},
-  {"id": 6, "name": "Pizza Vegan Queen", "price": 16000,"ingredients": ["Champiñon", "Pimiento", "Cebolla", "Choclo", "Tomate"], "img": "https://images.deliveryhero.io/image/pedidosya/products/c5637f80-ca66-4eb8-94e8-db6370a65ea4.jpg?quality=90&width=1920&webp=1"}
+  "Pizzas": [{"id": 1, "name": "Pizza Americana", "price": 10000,"ingredients": ["Jamón", "Carne", "Salchicha", "Pepperoni"], "img": "https://images.deliveryhero.io/image/pedidosya/products/c51bde16-927d-4a61-95e5-d6875bc22a52.jpg?quality=90&width=1920&webp=1"},
+  {"id": 2, "name": "Pizza BBQ Chicken", "price": 11000,"ingredients": ["Salsa BBQ", "Pollo", "Cebolla"], "img": "https://images.deliveryhero.io/image/pedidosya/products/f813241b-b77d-448c-86ce-64f5005e8677.jpg?quality=90&width=1920&webp=1"},
+  {"id": 3, "name": "Pizza Campesina", "price": 10000,"ingredients": ["Champiñon", "Pollo", "Pimiento"], "img": "https://images.deliveryhero.io/image/pedidosya/products/7876229c-e932-418a-bacb-fc7897ce3d17.jpg?quality=90&width=1920&webp=1"},
+  {"id": 4, "name": "Pizza Hawaiana", "price": 11000,"ingredients": ["Jamón", "Pollo", "Piña"], "img": "https://images.deliveryhero.io/image/pedidosya/products/78bf3b40-9b33-449f-99cf-dcee5a0ef8eb.jpg?quality=90&width=1920&webp=1"},
+  {"id": 5, "name": "Pizza Mechada BBQ", "price": 11000,"ingredients": ["Carne Mechada", "Tomate", "Cebolla"], "img": "https://images.deliveryhero.io/image/pedidosya/products/c51bde16-927d-4a61-95e5-d6875bc22a52.jpg?quality=90&width=1920&webp=1"},
+  {"id": 6, "name": "Pizza Vegan Queen", "price": 10000,"ingredients": ["Champiñon", "Pimiento", "Cebolla", "Choclo", "Tomate"], "img": "https://images.deliveryhero.io/image/pedidosya/products/c5637f80-ca66-4eb8-94e8-db6370a65ea4.jpg?quality=90&width=1920&webp=1"}
   ],
   "Complements":[
     {"id": 13, "name": "Salsa BBQ", "price": 1000, "img": "https://pbs.twimg.com/media/B0vZM5VCYAImXGE.jpg"},

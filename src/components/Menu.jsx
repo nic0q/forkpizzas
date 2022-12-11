@@ -70,7 +70,7 @@ export default function Menu() {
                   <a href="#complementos">Complementos</a>
                 </div>
               </div>
-              <div className="border-2 border-gray-200 shadow-xl drop-shadow-xl rounded-2xl my-3 bg-white">
+              <div className="border-2 border-gray-200 rounded-2xl my-3 bg-white">
                 <div className="flex flex-row justify-center" id="pizzas">
                   {products.Pizzas.map((pizza) => (
                     <FoodCard

@@ -16,7 +16,7 @@ export default function FoodCard({
       }
     >
       <img className={size} alt="pizza" src={img}></img>
-      <h2 className="text-sm font-bold pt-2 h-[10%]" color="black">
+      <h2 className="text-sm font-bold pt-3 h-[10%]" color="black">
         {name}
       </h2>
       <br></br>
