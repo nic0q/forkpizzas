@@ -9,7 +9,7 @@ const Ingredient = ({ id, name, image = "", price, addIngredient, ingredientList
   return (
     <div
       onClick={()=>addIngredient(id, price)}
-      className={`flex w-44 h-12 border-2 border-gray-200  bg-white rounded-lg items-center text-sm m-2 cursor-pointer shadow-xl drop-shadow-md ${
+      className={`flex w-44 h-12 border-2 border-gray-200  bg-white rounded-lg items-center text-sm m-2 cursor-pointer ${
         image !== "" ? "justify-evenly" : "justify-center" 
       } ${ingredientList.includes(id) ? "border-green-500" : "hover:border-gray-400"}`}
     >
@@ -56,7 +56,7 @@ export default function Customize() {
     <div className="flex flex-col w-full h-full bg-gray-300 items-center">
       <Navbar></Navbar>
     <div className="flex flex-col items-center justify-center text-sm  text-gray-700 pb-8">
-      <div className="flex bg-gray-100 mt-8 rounded-2xl shadow-xl drop-shadow-md w-[80%]">
+      <div className="flex bg-gray-100 mt-8 rounded-2xl w-[80%]">
         <div className="flex flex-col">
         <h2 className="text-xl p-2">Crear Pizza</h2>
         <div className="pl-6 pt-6 ">
