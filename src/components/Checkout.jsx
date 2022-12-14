@@ -157,7 +157,7 @@ export default function Checkout() {
               delivery === 0 ? "bg-orange-300 " : "bg-white cursor-pointer"
             }`}
           >
-            <p className="text-sm">Entrega en Local</p>
+            <p className="text-sm">Retiro en Local</p>
             <p className="text-2xl">🏬</p>
           </div>
           <div
