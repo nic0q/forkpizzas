@@ -9,7 +9,6 @@ const Branch = ({name, address, phone}) => {
   </div>
 }
 
-
 export default function Branches(){
   return <div className="flex flex-col w-full h-screen bg-gray-200 items-center">
     <Navbar></Navbar>
@@ -28,9 +27,8 @@ export default function Branches(){
         <Branch name="Las Condes" address="Av. Apoquindo 5000, Las Condes" phone="+56 9 1234 5678"></Branch>
         <Branch name="Peñalolén" address="Av. Apoquindo 5000, Las Condes" phone="+56 9 1234 5678"></Branch>
         <Branch name="Quilicura" address="Av. Apoquindo 5000, Las Condes" phone="+56 9 1234 5678"></Branch>
-
-  </div>
-  </div>
+      </div>
+    </div>
   <Footer></Footer>
   </div>
 }

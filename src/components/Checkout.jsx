@@ -20,6 +20,7 @@ export default function Checkout() {
   const [payment, setPayment] = useState(-1)
   const [delivery, setDelivery] = useState(-1)
   const [deliveryCost, setDeliveryCost] = useState(0)
+  const [comp, setComp] = useState("Boleta")
 
   useEffect(() => {
     try {
@@ -34,6 +35,7 @@ export default function Checkout() {
     }
   }, [cart, deliveryCost, tip])
   const empty_cart = () => {
+    setSubTotal(0)
     setCart(remove_cart())
   }
   const remove_one_item = (id) => {
@@ -60,7 +62,8 @@ export default function Checkout() {
       alert("Seleccione un medio de entrega")
     }
     else {
-      alert("Gracias por su compra")
+      alert(`Gracias por su compra, su ${comp} será enviado a su correo`)
+      empty_cart()
       navigate("/forkpizzas")
     }
   }
@@ -349,17 +352,17 @@ export default function Checkout() {
               </div>
               <div className={`w-[90%] h-20 flex items-center`}>
             <p className="text-xs w-[60%] mr-8">Desea Boleta o Factura</p>
-             <select className="bg-gray-300 px-6 border-2 rounded-xl">
-              <option value="Boleta">Boleta</option>
+             <select className="bg-gray-300 px-6 border-2 rounded-xl" onChange={e => setComp(e.target.value)}>
+              <option value="Boleta" selected>Boleta</option>
               <option value="Factura">Factura</option>
              </select>
           </div>
               <button
-                onClick={pay}
+                onClick={total === 0 ? "" :pay}
                 type="button"
-                className="font-sans text-xl w-full py-2 bg-green-500 text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-green-400 hover:shadow-lg active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out"
+                className={`font-sans text-xl w-full py-2 ${total === 0 ? "bg-gray-500 cursor-default" : "bg-green-500 cursor-pointer"} text-white font-medium leading-tight uppercase rounded shadow-md hover:bg-green-400 hover:shadow-lg active:bg-yellow-700 active:shadow-lg transition duration-150 ease-in-out`}
               >
-                {payment === 0 ? "Hacer Pedido" : payment === 1 ? "Proceder al pago" : payment === 2 ? "Continuar con WebPay" : "Pagar"}
+                {payment === 0 ? "Hacer Pedido" : payment === 1 ? "Proceder con Tarjeta" : payment === 2 ? "Continuar con WebPay" : "Pagar"}
               </button>
             </div>
           </div>
